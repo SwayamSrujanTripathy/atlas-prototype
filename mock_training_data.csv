@@ -1,0 +1,19 @@
+product_id,seller_id,price,category,return_count,review,image_url,is_fake,timestamp,rating
+P1,S1,36.92425037842447,electronics,8,Review 0 fake,uploads/adidas fake shoes lgoo.jpg,0,2025-05-28 17:53:19.293521,3
+P2,S2,56.16965344406325,clothing,18,Review 1 great,uploads/brand1_logo.png,0,2025-06-08 17:53:19.293521,2
+P3,S3,49.82975907795931,electronics,17,Review 2 great,uploads/adidas fake.jpg,1,2025-06-09 17:53:19.293521,4
+P4,S4,56.51560694103493,clothing,4,Review 3 great,uploads/brand2_logo.jpg,0,2025-06-22 17:53:19.293521,4
+P5,S5,49.64870019779035,electronics,10,Review 4 great,uploads/levis fake.jpg,1,2025-06-12 17:53:19.293521,1
+P6,S6,65.48494810522767,clothing,10,Review 5 great,uploads/brand3_logo.jpg,0,2025-06-14 17:53:19.293521,3
+P7,S7,36.22267887915946,electronics,13,Review 6 great,uploads/brand4_logo.jpg,0,2025-06-10 17:53:19.293521,1
+P8,S8,55.47046492637425,clothing,0,Review 7 great,uploads/gucci fake.jpg,1,2025-06-18 17:53:19.293521,2
+P1,S1,50.0,electronics,0,Great product! 0,uploads/adidas fake shoes lgoo.jpg,0,2025-06-22 17:53:19.309483,5
+P1,S1,50.0,electronics,0,Great product! 1,uploads/adidas fake shoes lgoo.jpg,0,2025-06-22 16:53:19.314774,5
+P1,S1,50.0,electronics,0,Great product! 2,uploads/adidas fake shoes lgoo.jpg,0,2025-06-22 15:53:19.314774,5
+P1,S1,50.0,electronics,0,Great product! 3,uploads/adidas fake shoes lgoo.jpg,0,2025-06-22 14:53:19.314774,5
+P1,S1,50.0,electronics,0,Great product! 4,uploads/adidas fake shoes lgoo.jpg,0,2025-06-22 13:53:19.314774,5
+P1,S1,50.0,electronics,0,Great product! 5,uploads/adidas fake shoes lgoo.jpg,0,2025-06-22 12:53:19.314774,5
+P1,S1,50.0,electronics,0,Great product! 6,uploads/adidas fake shoes lgoo.jpg,0,2025-06-22 11:53:19.314774,5
+P1,S1,50.0,electronics,0,Great product! 7,uploads/adidas fake shoes lgoo.jpg,0,2025-06-22 10:53:19.314774,5
+P1,S1,50.0,electronics,0,Great product! 8,uploads/adidas fake shoes lgoo.jpg,0,2025-06-22 09:53:19.314774,5
+P1,S1,50.0,electronics,0,Great product! 9,uploads/adidas fake shoes lgoo.jpg,0,2025-06-22 08:53:19.325884,5

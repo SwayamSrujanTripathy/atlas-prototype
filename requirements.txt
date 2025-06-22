@@ -1,0 +1,13 @@
+Flask
+Flask-Cors
+pandas
+numpy
+kafka-python
+boto3
+pyyaml
+scikit-learn
+opencv-python
+Pillow
+langchain-community
+langchain-core
+langsmith

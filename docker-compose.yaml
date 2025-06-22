@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.0.1
+    hostname: zookeeper
+    ports:
+      - "2181:2181"
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+
+  kafka:
+    image: confluentinc/cp-kafka:7.0.1
+    hostname: kafka
+    depends_on:
+      - zookeeper
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+
+  localstack:
+    image: localstack/localstack:0.12.17
+    hostname: localstack
+    ports:
+      - "4566:4566"
+      - "4510-4559:4510-4559"
+    environment:
+      SERVICES: s3
+      DEFAULT_REGION: ap-south-1
+      CORS_ORIGINS: http://localhost:3000,http://127.0.0.1:3000
+      CORS_ALLOW_HEADERS: "*"
+    volumes:
+      - ./localstack-data:/var/lib/localstack
+      - "/var/run/docker.sock:/var/run/docker.sock"
+
+  api-backend:
+    build:
+      context: .
+      dockerfile: Dockerfile_api
+    container_name: atlas-api-backend
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app # Keep this for mounting your source code
+    environment:
+      PYTHONUNBUFFERED: 1
+    # --- ADDED MEMORY LIMITS HERE ---
+    mem_limit: 2g # Limit container to 2GB of RAM
+    mem_reservation: 1g # Reserve 1GB of RAM, container will get at least this much
+    depends_on:
+      - kafka
+      - localstack

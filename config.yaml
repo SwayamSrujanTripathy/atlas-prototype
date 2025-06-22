@@ -1,0 +1,9 @@
+environment: local
+kafka_bootstrap_servers: localhost:9092
+s3_endpoint_url: 'http://localhost:4566'
+s3_bucket: atlas-results-local
+aws_access_key_id: test
+aws_secret_access_key: test
+aws_region: ap-south-1
+upload_dir: uploads
+
